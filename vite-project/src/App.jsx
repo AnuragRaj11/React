@@ -18,7 +18,7 @@ function App() {
   // )
 
 useEffect(() => {
-  
+  alert("hello learner")  //strick mode
   
 }, [])
 
