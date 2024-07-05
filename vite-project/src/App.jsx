@@ -1,7 +1,9 @@
-import { useState,useEffect } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import Card from "./components/Ccard"
 function App() {
   // const [count, setCount] = useState(0)
+  const [event, handle] = useState({})
+  const [showbtn, setData] = useState([])
 
 
   // return (
@@ -17,12 +19,32 @@ function App() {
   //   </>
   // )
 
-useEffect(() => {
-  alert("hello learner")  //strick mode
-  
-}, [])
+  // useEffect(() => {
+  //   alert("hello learner")  //strick mode
 
+  // },)
+  useEffect(() => {
+    alert("hello 2 learner")
 
+  }, [])
+  // const hook = useRef(0)
+  // hook.current = hook.current + 1;
+  // alert('You clicked ' + hook.current + ' times!');
+
+  const handleMouseOver = () => {
+    alert("mouse")
+  }
+
+  const handleChange = (e) => {
+    handle({ ...Data, [e.target.name]: e.target.id })
+  }
+
+  return (
+    <>
+      {showbtn && <button>rendering occur</button>}
+      <input type="text" name="an" id="11" onChange={handleChange} />
+    </>
+  )
 }
 
 export default App
