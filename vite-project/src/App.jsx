@@ -1,14 +1,16 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
+// import { useState } from 'react'
+import Card from "./components/Ccard"
 function App() {
-  const [count, setCount] = useState(0)
+  // const [count, setCount] = useState(0)
 
   return (
     <>
-      
+      <div className="cards">
+        <Card title="card1" descrip="hello react"/>
+        <Card title="card2" descrip="hello react"/>
+        <Card title="card3" descrip="hello react"/>
+        <Card title="card4" descrip="hello react"/>
+      </div>
     </>
   )
 }
