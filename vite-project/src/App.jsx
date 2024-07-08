@@ -1,5 +1,9 @@
-import { useRef, useEffect, useState } from 'react'
-import Card from "./components/Ccard"
+import { useRef, useEffect, useState,useMemo } from 'react'
+import Homee from './components/Homee'
+import Navbar from './components/Navbar'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { countercontext } from './context/context'
+
 function App() {
   // const [count, setCount] = useState(0)
   const [event, handle] = useState({})
@@ -39,10 +43,19 @@ function App() {
     handle({ ...Data, [e.target.name]: e.target.id })
   }
 
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <><Navbar /><Homee /></>
+    },
+  ])
+
   return (
     <>
       {showbtn && <button>rendering occur</button>}
       <input type="text" name="an" id="11" onChange={handleChange} />
+
+      <RouterProvider router={router} />
     </>
   )
 }
